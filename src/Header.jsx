@@ -1,21 +1,39 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
+import Logo from "./logo.png";
 
 const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
-  background-color: #fff;
+  justify-content: space-between;
   color: black;
 `;
 
 const GlobalNav = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 20px;
+  height: 80px;
+  align-items: center;
+  position: fixed;
+  background-color: none;
+  z-index: 99;
+`;
+
+const SmallNav = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
   div {
+    height: 40px;
     padding: 0 15px;
+    padding-top: 10px;
     cursor: pointer;
     &:hover {
-      background-color: gray;
+      background-color: rgba(100, 100, 100, 0.1);
+      border-radius: 3px;
     }
   }
 `;
@@ -24,8 +42,8 @@ export default function Header() {
   return (
     <Container>
       <GlobalNav>
-        <div>
-          <img src={logo} width="160px" alt="logo" />
+        <div id="logo">
+          <img src={Logo} width="120px" alt="logo" />
         </div>
         <SmallNav>
           <div>Model S</div>
